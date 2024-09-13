@@ -1,0 +1,190 @@
+---
+import ExperienceCard from "./experience/ExperienceCard.astro";
+---
+
+<section
+  id="experience"
+  class="my-14 md:my-28 px-4 md:px-8 lg:px-32 bg-primary"
+>
+  <!-- Título de la sección -->
+  <h3 class="text-large md:text-large font-semibold mb-6 text-dark">
+    Experiencia.
+  </h3>
+
+  <!-- Contenedor de pestañas y contenido -->
+  <div class="flex flex-col md:flex-row">
+    <!-- Pestañas Verticales -->
+    <div
+      class="flex flex-row md:flex-col border-b md:border-b-0 md:border-r border-dark mb-6 md:mb-0 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-dark"
+    >
+      <button
+        class="tab-button text-left px-4 py-8 font-bold hover:text-secondary border-b-2 md:border-b-0 md:border-l-4  border-secondary text-secondary transition-all duration-300 text-medium"
+        data-tab="necsus"
+      >
+        Necsus
+      </button>
+      <button
+        class="tab-button text-left px-4 py-8 text-dark font-bold hover:text-secondary border-b-2 md:border-b-0 md:border-l-4 border-transparent hover:border-secondary transition-all duration-300 text-medium"
+        data-tab="grupo500"
+      >
+        Grupo 500 Noches
+      </button>
+      <button
+        class="tab-button text-left px-4 py-8 text-dark font-bold hover:text-secondary border-b-2 md:border-b-0 md:border-l-4 border-transparent hover:border-secondary transition-all duration-300 text-medium"
+        data-tab="vidassistence"
+      >
+        VIDASSISTENCE
+      </button>
+      <button
+        class="tab-button text-left px-4 py-8 text-dark font-bold hover:text-secondary border-b-2 md:border-b-0 md:border-l-4 border-transparent hover:border-secondary transition-all duration-300 text-medium"
+        data-tab="imass"
+      >
+        IMASS
+      </button>
+    </div>
+
+    <!-- Contenido de las Experiencias -->
+    <div class="tab-content flex-1">
+      <ExperienceCard
+        id="necsus"
+        role="Desarrollador Frontend Jr."
+        company="Necsus"
+        date="Abril 2024 - Actualidad"
+        isActive={true}
+      >
+        <!-- Descripción como contenido HTML dentro del slot -->
+        <p class="text-normal">
+          En mi rol como desarrollador frontend en Necsus, he sido responsable
+          de la resolución de issues y la depuración de código para mejorar la
+          funcionalidad y rendimiento del sistema. He trabajado activamente en
+          la identificación de errores y en su resolución, lo que resultó en una
+          plataforma más estable y un aumento significativo en el rendimiento
+          general del sistema.
+        </p>
+        <p class="text-normal my-3">Técnologías usadas:</p>
+        <ol class="text-normal flex gap-10 md:gap-16">
+          <div>
+            <li>React</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </div>
+          <div>
+            <li>TypeScript</li>
+            <li>Gitlab</li>
+            <li>SASS</li>
+          </div>
+        </ol>
+      </ExperienceCard>
+
+      <ExperienceCard
+        id="grupo500"
+        role="Desarrollador Frontend"
+        company="Rosoft"
+        date="Enero 2024 - Abril 2024"
+        isActive={false}
+      >
+        <!-- Descripción como contenido HTML dentro del slot -->
+        <p class="text-normal">
+          Creé un sitio funcional, atractivo y fácil de navegar, optimizado para
+          SEO y con tiempos de carga significativamente reducidos gracias a la
+          optimización de imágenes y scripts.
+        </p>
+        <p class="text-normal my-3">Técnologías usadas:</p>
+        <ol class="text-normal flex gap-10">
+          <div>
+            <li>Nexy Js</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </div>
+          <div>
+            <li>TypeScript</li>
+            <li>Gitlab</li>
+            <li>Tailwind CSS</li>
+          </div>
+        </ol>
+      </ExperienceCard>
+
+      <ExperienceCard
+        id="vidassistence"
+        role="Desarrollador Web"
+        company="Rosoft"
+        date="Septiembre 2023 - Diciembre 2023"
+        isActive={false}
+      >
+        <!-- Descripción como contenido HTML dentro del slot -->
+        <p class="text-normal">
+          Me encargué de liderar el desarrollo de una aplicación Android para la
+          generación y administración de reportes médicos, lo que mejoró
+          significativamente los tiempos de respuesta y seguimiento de pacientes
+          por parte del equipo médico. Esta aplicación permitió a los usuarios
+          finales generar reportes en tiempo real
+        </p>
+        <p class="text-normal my-3">Técnologías usadas:</p>
+        <ol class="text-normal flex gap-10">
+          <div>
+            <li>React</li>
+            <li>React Native</li>
+            <li>CSS</li>
+          </div>
+          <div>
+            <li>JavaScript</li>
+            <li>Github</li>
+            <li>Bootstrap</li>
+          </div>
+        </ol>
+      </ExperienceCard>
+
+      <ExperienceCard
+        id="imass"
+        role="Becario como Desarrollador Frontend"
+        company="IMASS"
+        date="Marzo 2023 - Octubre 2023"
+        isActive={false}
+      >
+        <p class="text-normal">
+          En IMASS, fui parte del equipo encargado del desarrollo y diseño de
+          una plataforma web para la administración de pólizas colectivas. Este
+          sistema permitía a los usuarios gestionar pólizas de seguros de manera
+          eficiente y segura. Trabajé en el diseño y desarrollo de la página
+          "Seguros con Causa".
+        </p>
+        <p class="text-normal my-3">Técnologías usadas:</p>
+        <ol class="text-normal flex gap-10">
+          <div>
+            <li>React</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </div>
+          <div>
+            <li>Bootstrap</li>
+            <li>Gitlab</li>
+            <li>JavaScript</li>
+          </div>
+        </ol>
+      </ExperienceCard>
+    </div>
+  </div>
+
+  <div class="border-t-4 border-secondary mt-8"></div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const tabButtons = document.querySelectorAll(".tab-button");
+    const experienceContents = document.querySelectorAll(".experience-content");
+
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        tabButtons.forEach((btn) =>
+          btn.classList.remove("text-secondary", "border-secondary"),
+        );
+        button.classList.add("text-secondary", "border-secondary");
+        experienceContents.forEach((content) =>
+          content.classList.add("hidden"),
+        );
+        const selectedTab = button.getAttribute("data-tab");
+        document.getElementById(selectedTab).classList.remove("hidden");
+      });
+    });
+  });
+</script>

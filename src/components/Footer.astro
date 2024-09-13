@@ -1,0 +1,103 @@
+---
+import Github from "../icons/Github.astro";
+import Linkedin from "../icons/Linkedin.astro";
+---
+
+<footer class="bg-primary py-8 mt-16">
+  <div
+    class="container mx-auto flex flex-col md:flex-row justify-between items-center md:items-start px-4 md:px-8"
+  >
+    <!-- Sección de información de contacto -->
+    <div class="text-center md:text-left mb-8 md:mb-0">
+      <h2 class="text-large font-bold text-dark mb-2">
+        <span class="text-secondary">A</span>lexis <span class="text-secondary"
+          >R</span
+        >oldán
+      </h2>
+      <p class="text-dark">
+        <a
+          href="mailto:alexisroldandanemi@gmail.com"
+          class="hover:text-secondary transition-colors duration-300 text-normal"
+        >
+          alexisroldandanemi@gmail.com
+        </a>
+      </p>
+
+      <!-- Links a redes sociales -->
+      <div class="flex justify-center md:justify-start mt-4 space-x-4">
+        <a
+          href="https://www.linkedin.com/in/alexis-roldán-sánchez-74b918241"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-dark transition-colors duration-300"
+        >
+          <Linkedin class="w-6 h-6 fill-current" />
+        </a>
+        <a
+          href="https://github.com/alexisroldancaloom"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-dark transition-colors duration-300"
+        >
+          <Github class="w-6 h-6 fill-current" />
+        </a>
+      </div>
+    </div>
+
+    <!-- Sección de derechos de autor -->
+    <div class="text-center mb-8 md:mb-0 md:text-left">
+      <p class="text-dark text-normal">&copy; Alexis Roldán, 2024</p>
+    </div>
+
+    <!-- Mapa del sitio -->
+    <div class="text-center md:text-right">
+      <h3 class="text-medium font-bold text-dark mb-2">Mapa del Sitio</h3>
+      <ul class="text-dark space-y-1 text-normal">
+        <div class="flex gap-10">
+          <div>
+            <li>
+              <a
+                href="#hero"
+                class="hover:text-secondary transition-colors duration-300"
+                >Presentación</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="hover:text-secondary transition-colors duration-300"
+                >Sobre Mí</a
+              >
+            </li>
+          </div>
+          <div>
+            <li>
+              <a
+                href="#experience"
+                class="hover:text-secondary transition-colors duration-300"
+                >Experiencia</a
+              >
+            </li>
+            <li>
+              <a
+                href="#skills"
+                class="hover:text-secondary transition-colors duration-300"
+                >Habilidades</a
+              >
+            </li>
+          </div>
+
+          <div>
+            <li>
+              <a
+                href="#contact"
+                class="hover:text-secondary transition-colors duration-300"
+                >Contacto</a
+              >
+            </li>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</footer>

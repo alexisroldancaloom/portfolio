@@ -1,0 +1,78 @@
+---
+import JavaScript from "../icons/JavaScript.astro";
+import React from "../icons/React.astro";
+import HTML from "../icons/HTML.astro";
+import CSS from "../icons/CSS.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Bootstrap from "../icons/Bootstrap.astro";
+import Next from "../icons/Next.astro";
+import Java from "../icons/Java.astro";
+import Python from "../icons/Python.astro";
+import Postgresql from "../icons/Postgresql.astro";
+import MongoDb from "../icons/MongoDb.astro";
+import Figma from "../icons/Figma.astro";
+import AdobeXd from "../icons/Adobexd.astro";
+import Gitlab from "../icons/Gitlab.astro";
+import Github from "../icons/Github.astro";
+import TypeScipt from "../icons/Typescript.astro";
+
+interface Skill {
+  name: string;
+  Component: any;
+}
+
+const skills: Skill[] = [
+  // Frontend
+  { name: "HTML-5", Component: HTML },
+  { name: "CSS", Component: CSS },
+  { name: "JavaScript", Component: JavaScript },
+  { name: "TypeScript", Component: TypeScipt },
+  { name: "React", Component: React },
+  { name: "React Native", Component: React },
+  { name: "Next", Component: Next },
+  { name: "Microfrontend", Component: React },
+  { name: "Tailwind", Component: Tailwind },
+  { name: "Bootstrap", Component: Bootstrap },
+
+  // Backend
+  { name: "Java", Component: Java },
+  { name: "Python", Component: Python },
+
+  // Bases de Datos
+  { name: "Postgresql", Component: Postgresql },
+  { name: "MongoDb", Component: MongoDb },
+
+  // DevOps
+  { name: "GitHub", Component: Github },
+  { name: "GitLab", Component: Gitlab },
+
+  // Herramientas de Diseño
+  { name: "Figma", Component: Figma },
+  { name: "AdobeXd", Component: AdobeXd },
+];
+---
+
+<section id="skills" class="my-14 md:my-28 px-4 md:px-8 lg:px-32">
+  <h2 class="text-large font-bold text-gray-800 mb-6">Skills.</h2>
+
+  <!-- Contenedor principal -->
+  <div class="border-2 border-secondary rounded-xl p-8">
+    <!-- Grid de habilidades -->
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8"
+    >
+      {
+        skills.map((skill) => {
+          const IconComponent = skill.Component;
+          return (
+            <div class="flex flex-col items-center">
+              {/* Renderizar el componente con las clases adecuadas */}
+              <IconComponent class="w-16 h-16 mb-2" />
+              <p class="text-black-700 text-sm">{skill.name}</p>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>
