@@ -1,7 +1,5 @@
 # Alexis Roldán Sánchez - Portfolio
 
-![Portfolio Screenshot](https://via.placeholder.com/800x400.png) <!-- Aquí podrías poner una captura de pantalla de tu portafolio -->
-
 ## 🚀 Sobre mí
 
 👋 ¡Hola! Soy **Alexis Roldán Sánchez**, un desarrollador frontend apasionado por crear experiencias digitales centradas en el usuario. Con más de un año de experiencia en el desarrollo web y una formación en **Ingeniería en Computación**, me especializo en la creación de soluciones visualmente atractivas y altamente funcionales.
