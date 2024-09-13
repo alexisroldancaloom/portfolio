@@ -18,14 +18,6 @@ Actualmente, estoy expandiendo mis habilidades hacia el **backend** con **Java**
 - **Gestión de versiones**: Git (GitHub y GitLab)
 - **Metodologías**: Scrum, Agile
 
-### Backend (en formación)
-
-- **Lenguajes**: Java
-- **Frameworks**: Spring Boot
-- **Cloud**: AWS, Lambda
-
----
-
 ## 💼 Proyectos Destacados
 
 ### 🖥️ [Necsus](#)
