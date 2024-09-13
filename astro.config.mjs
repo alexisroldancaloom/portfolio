@@ -1,8 +1,7 @@
 import { defineConfig } from "astro/config";
-// Import /serverless for a Serverless SSR site
-import vercelServerless from "@astrojs/vercel/serverless";
+import netlify from "@astrojs/netlify/functions";
 
 export default defineConfig({
   output: "server",
-  adapter: vercelServerless(),
+  adapter: netlify(),
 });
