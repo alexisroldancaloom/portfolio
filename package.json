@@ -15,7 +15,6 @@
     "astro": "^4.14.6",
     "cookie": "^0.6.0",
     "simple-concat": "^1.0.1",
-    "tailwindcss": "3.4.1",
     "typescript": "^5.5.4"
   },
   "devDependencies": {
