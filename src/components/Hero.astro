@@ -33,12 +33,13 @@ import Linkedin from "../icons/Linkedin.astro";
         >
           <Linkedin class="w-10 h-10 hover:ba" />
         </a>
-
-        <button
-          class="px-6 py-2 border-2 border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition-colors duration-300 text-normal"
-        >
-          Descargar CV
-        </button>
+        <a href="/cv.pdf" download="Alexis_Roldan_CV.pdf">
+          <button
+            class="px-6 py-2 border-2 border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition-colors duration-300 text-normal"
+          >
+            Descargar CV
+          </button>
+        </a>
       </div>
     </div>
   </div>
@@ -48,7 +49,9 @@ import Linkedin from "../icons/Linkedin.astro";
       <button
         class="animate-bounce bg-secondary text-white rounded-full w-10 h-10 md:w-20 md:h-20 flex items-center justify-center transition-transform duration-300 hover:translate-y-1 mt-10"
       >
-        <div class="md:text-3xl transform transition-transform duration-300 text-s">
+        <div
+          class="md:text-3xl transform transition-transform duration-300 text-s"
+        >
           ↓
         </div>
       </button>
