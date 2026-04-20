@@ -1,33 +1,224 @@
 ---
 interface Props {
   title: string;
+  description?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = "Portafolio de Alexis Roldán — Frontend Specialist con experiencia en React, TypeScript y arquitectura de componentes. Desarrollador web en Ciudad de México.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/images/perfil.png", Astro.site);
+
 import Header from "../components/Header.astro";
+import LanguageSelector from "../components/LanguageSelector.astro";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Portafolio de Alexis Roldán: Desarrollador frontend"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <title>{title}</title>
-    <link rel="stylesheet" href="globals.css" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Alexis Roldán" />
+    <meta name="robots" content="index, follow" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Alexis Roldán — Portfolio" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/globals.css" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alexis Roldán",
+      "url": Astro.site?.toString(),
+      "jobTitle": "Frontend Specialist",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Grupo Salinas / Purpose Financial"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressCountry": "MX"
+      },
+      "email": "alexisroldandanemi@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/alexis-roldán-sánchez-74b918241",
+        "https://github.com/alexisroldancaloom"
+      ],
+      "knowsAbout": [
+        "React", "TypeScript", "JavaScript", "Next.js", "Node.js",
+        "Tailwind CSS", "Frontend Development", "Web Development"
+      ]
+    })} />
   </head>
   <body class="bg-primary">
+    <LanguageSelector />
     <Header />
     <slot />
+
+    <script>
+      const translations: Record<string, string> = {
+        "nav.about": "Who am I?",
+        "nav.experience": "Experience",
+        "nav.skills": "Skills",
+        "nav.contact": "Contact me!",
+
+        "hero.greeting": "Hi! I'm Alexis Roldán",
+        "hero.rolePrefix": "Frontend",
+        "hero.roleLabel": "Developer",
+        "hero.description": "Focused on keep learning, writing clean code and building functional apps.",
+        "hero.downloadCv": "Download CV",
+        "hero.learnMore": "Learn more",
+
+        "about.title": "About me.",
+        "about.p1": "Hi! I'm a web developer specialized in frontend with a degree in Computer Engineering. My focus is on creating user-centered solutions, combining intuitive functionality with good visual design.",
+        "about.p2": "Currently, I'm expanding my skills towards backend, aiming to become Fullstack, never stopping learning.",
+        "about.p3": "I have the ability to identify and solve problems efficiently, always oriented towards continuous improvement and achieving outstanding results, both as a team and individually.",
+
+        "exp.title": "Experience.",
+        "exp.techs": "Technologies used:",
+
+        "exp.gs.date": "November 2024 - Present | Mexico City, MX",
+        "exp.gs.desc": "Currently developing the frontend for document management platforms in the financial sector. I build interfaces with React and TypeScript that integrate with multiple business modules and peripherals.",
+        "exp.gs.li1": "Created an internal component library now used by several teams, which standardized the UI and significantly reduced the time to integrate new features.",
+        "exp.gs.li2": "Optimized platform load times by working on the frontend and how we communicate with backend services.",
+        "exp.gs.li3": "I participate in the team's frontend architecture decisions, proposing solutions designed to scale and be easy to maintain.",
+
+        "exp.necsus.date": "April 2024 - November 2024",
+        "exp.necsus.desc": "I focused on resolving issues and stabilizing an enterprise platform that had several performance problems. It was intense debugging and refactoring work.",
+        "exp.necsus.li1": "Identified and fixed critical bugs that were affecting users, which helped make the platform much more stable.",
+        "exp.necsus.li2": "Refactored components that had become hard to maintain, improving both performance and code readability.",
+        "exp.necsus.li3": "Worked alongside backend and QA to define code standards and improve our workflows with Scrum.",
+
+        "exp.g500.date": "January 2024 - April 2024",
+        "exp.g500.desc": "Built the Grupo 500 Noches website from scratch using Next.js. The main goal was to make it look good, load fast, and rank well in search engines.",
+        "exp.g500.li1": "Set up the project structure with Next.js and SSR so the content would be properly indexed by Google.",
+        "exp.g500.li2": "Worked on image optimization, lazy loading, and code splitting to improve load times.",
+        "exp.g500.li3": "Did all the responsive layout with Tailwind CSS, making sure it looked good on both mobile and desktop.",
+
+        "exp.vida.date": "September 2023 - December 2023",
+        "exp.vida.desc": "I was in charge of developing an app for doctors to generate and check medical reports from their patients, both from mobile and web.",
+        "exp.vida.li1": "Developed the mobile app with React Native so medical staff could generate reports in real time from their phones.",
+        "exp.vida.li2": "Also built the web admin panel with React so they could manage reports and track patients from the office.",
+        "exp.vida.li3": "This helped the medical team stop doing reports by hand, which sped up their daily work a lot.",
+
+        "exp.imass.date": "March 2023 - October 2023",
+        "exp.imass.desc": "My first professional experience. I joined as an intern on the team building a web platform for managing collective insurance policies.",
+        "exp.imass.li1": "Developed React components for the insurance policy system, where users could manage their collective insurance.",
+        "exp.imass.li2": "Designed and built the \"Seguros con Causa\" landing page, which was my first own project within the team.",
+        "exp.imass.li3": "Learned a lot about best practices by participating in code reviews and doing pair programming with senior developers.",
+
+        "footer.siteMap": "Site Map",
+        "footer.intro": "Introduction",
+        "footer.aboutMe": "About Me",
+        "footer.experience": "Experience",
+        "footer.skills": "Skills",
+        "footer.contact": "Contact",
+      };
+
+      const originals = new Map<Element, string>();
+
+      function applyLanguage(lang: string) {
+        const elements = document.querySelectorAll("[data-i18n]");
+        const langToggle = document.getElementById("lang-toggle");
+        const htmlEl = document.documentElement;
+
+        if (lang === "en") {
+          elements.forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (!key || !translations[key]) return;
+            if (!originals.has(el)) {
+              originals.set(el, el.textContent || "");
+            }
+            el.textContent = translations[key];
+          });
+          if (langToggle) langToggle.textContent = "ES";
+          htmlEl.lang = "en";
+        } else {
+          originals.forEach((original, el) => {
+            el.textContent = original;
+          });
+          if (langToggle) langToggle.textContent = "EN";
+          htmlEl.lang = "es";
+        }
+      }
+
+      function setLanguage(lang: string) {
+        localStorage.setItem("lang", lang);
+        applyLanguage(lang);
+      }
+
+      function showSelector() {
+        const selector = document.getElementById("lang-selector");
+        if (selector) {
+          selector.classList.remove("hidden");
+          selector.style.opacity = "0";
+          requestAnimationFrame(() => {
+            selector.style.opacity = "1";
+          });
+        }
+      }
+
+      function hideSelector() {
+        const selector = document.getElementById("lang-selector");
+        if (selector) {
+          selector.style.opacity = "0";
+          setTimeout(() => selector.classList.add("hidden"), 500);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedLang = localStorage.getItem("lang");
+
+        if (!savedLang) {
+          showSelector();
+        } else {
+          applyLanguage(savedLang);
+        }
+
+        document.getElementById("lang-es")?.addEventListener("click", () => {
+          setLanguage("es");
+          hideSelector();
+        });
+
+        document.getElementById("lang-en")?.addEventListener("click", () => {
+          setLanguage("en");
+          hideSelector();
+        });
+
+        document.getElementById("lang-toggle")?.addEventListener("click", () => {
+          const current = localStorage.getItem("lang") || "es";
+          const next = current === "es" ? "en" : "es";
+          setLanguage(next);
+        });
+      });
+    </script>
   </body>
 </html>

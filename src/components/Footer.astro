@@ -3,33 +3,33 @@ import Github from "../icons/Github.astro";
 import Linkedin from "../icons/Linkedin.astro";
 ---
 
-<footer class="bg-primary py-8 mt-16">
+<footer class="bg-primary py-8 mt-16" role="contentinfo">
   <div
     class="container mx-auto flex flex-col md:flex-row justify-between items-center md:items-start px-4 md:px-8"
   >
-    <!-- Sección de información de contacto -->
     <div class="text-center md:text-left mb-8 md:mb-0">
-      <h2 class="text-large font-bold text-dark mb-2">
+      <p class="text-large font-bold text-dark mb-2">
         <span class="text-secondary">A</span>lexis <span class="text-secondary"
           >R</span
         >oldán
-      </h2>
+      </p>
       <p class="text-dark">
         <a
           href="mailto:alexisroldandanemi@gmail.com"
           class="hover:text-secondary transition-colors duration-300 text-normal"
+          aria-label="Enviar email a alexisroldandanemi@gmail.com"
         >
           alexisroldandanemi@gmail.com
         </a>
       </p>
 
-      <!-- Links a redes sociales -->
       <div class="flex justify-center md:justify-start mt-4 space-x-4">
         <a
           href="https://www.linkedin.com/in/alexis-roldán-sánchez-74b918241"
           target="_blank"
           rel="noopener noreferrer"
           class="text-dark transition-colors duration-300"
+          aria-label="Perfil de LinkedIn de Alexis Roldán"
         >
           <Linkedin class="w-6 h-6 fill-current" />
         </a>
@@ -38,26 +38,26 @@ import Linkedin from "../icons/Linkedin.astro";
           target="_blank"
           rel="noopener noreferrer"
           class="text-dark transition-colors duration-300"
+          aria-label="Perfil de GitHub de Alexis Roldán"
         >
           <Github class="w-6 h-6 fill-current" />
         </a>
       </div>
     </div>
 
-    <!-- Sección de derechos de autor -->
     <div class="text-center mb-8 md:mb-0 md:text-left">
       <p class="text-dark text-normal">&copy; Alexis Roldán, 2024</p>
     </div>
 
-    <!-- Mapa del sitio -->
-    <div class="text-center md:text-right">
-      <h3 class="text-medium font-bold text-dark mb-2">Mapa del Sitio</h3>
+    <nav class="text-center md:text-right" aria-label="Mapa del sitio">
+      <p data-i18n="footer.siteMap" class="text-medium font-bold text-dark mb-2">Mapa del Sitio</p>
       <ul class="text-dark space-y-1 text-normal">
         <div class="flex gap-10">
           <div>
             <li>
               <a
                 href="#hero"
+                data-i18n="footer.intro"
                 class="hover:text-secondary transition-colors duration-300"
                 >Presentación</a
               >
@@ -65,6 +65,7 @@ import Linkedin from "../icons/Linkedin.astro";
             <li>
               <a
                 href="#about"
+                data-i18n="footer.aboutMe"
                 class="hover:text-secondary transition-colors duration-300"
                 >Sobre Mí</a
               >
@@ -74,6 +75,7 @@ import Linkedin from "../icons/Linkedin.astro";
             <li>
               <a
                 href="#experience"
+                data-i18n="footer.experience"
                 class="hover:text-secondary transition-colors duration-300"
                 >Experiencia</a
               >
@@ -81,6 +83,7 @@ import Linkedin from "../icons/Linkedin.astro";
             <li>
               <a
                 href="#skills"
+                data-i18n="footer.skills"
                 class="hover:text-secondary transition-colors duration-300"
                 >Habilidades</a
               >
@@ -91,6 +94,7 @@ import Linkedin from "../icons/Linkedin.astro";
             <li>
               <a
                 href="mailto:alexisroldandanemi@gmail.com"
+                data-i18n="footer.contact"
                 class="hover:text-secondary transition-colors duration-300"
                 >Contacto</a
               >
@@ -98,6 +102,6 @@ import Linkedin from "../icons/Linkedin.astro";
           </div>
         </div>
       </ul>
-    </div>
+    </nav>
   </div>
 </footer>

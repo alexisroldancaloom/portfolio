@@ -6,19 +6,22 @@ import ExperienceCard from "./experience/ExperienceCard.astro";
   id="experience"
   class="my-14 md:my-28 px-4 md:px-8 lg:px-32 bg-primary"
 >
-  <!-- Título de la sección -->
-  <h3 class="text-large md:text-large font-semibold mb-6 text-dark">
+  <h2 data-i18n="exp.title" class="text-large md:text-large font-semibold mb-6 text-dark">
     Experiencia.
   </h3>
 
-  <!-- Contenedor de pestañas y contenido -->
   <div class="flex flex-col md:flex-row">
-    <!-- Pestañas Verticales -->
     <div
       class="flex flex-row md:flex-col border-b md:border-b-0 md:border-r border-dark mb-6 md:mb-0 overflow-x-auto whitespace-nowrap scrollbar-thin scrollbar-thumb-dark"
     >
       <button
         class="tab-button text-left px-4 py-8 font-bold hover:text-secondary border-b-2 md:border-b-0 md:border-l-4 border-secondary text-secondary transition-all duration-300 text-medium"
+        data-tab="gruposalinas"
+      >
+        Grupo Salinas
+      </button>
+      <button
+        class="tab-button text-left px-4 py-8 text-dark font-bold hover:text-secondary border-b-2 md:border-b-0 md:border-l-4 border-transparent hover:border-secondary transition-all duration-300 text-medium"
         data-tab="necsus"
       >
         Necsus
@@ -43,122 +46,217 @@ import ExperienceCard from "./experience/ExperienceCard.astro";
       </button>
     </div>
 
-    <!-- Contenido de las Experiencias -->
     <div class="tab-content flex-1">
       <ExperienceCard
-        id="necsus"
-        role="Desarrollador Frontend Jr."
-        company="Necsus"
-        date="Abril 2024 - Actualidad"
+        id="gruposalinas"
+        role="Frontend Specialist"
+        company="GRUPO SALINAS / Purpose Financial"
+        date="Noviembre 2024 - Actualidad | Ciudad de México, MX"
+        dateKey="exp.gs.date"
         isActive={true}
       >
-        <!-- Descripción como contenido HTML dentro del slot -->
-        <p class="text-normal">
-          En mi rol como desarrollador frontend en Necsus, he sido responsable
-          de la resolución de issues y la depuración de código para mejorar la
-          funcionalidad y rendimiento del sistema. He trabajado activamente en
-          la identificación de errores y en su resolución, lo que resultó en una
-          plataforma más estable y un aumento significativo en el rendimiento
-          general del sistema.
+        <p data-i18n="exp.gs.desc" class="text-normal">
+          Actualmente trabajo desarrollando el frontend de plataformas de
+          gestión documental en el sector financiero. Me encargo de construir
+          interfaces con React y TypeScript que se integran con múltiples
+          módulos y periféricos del negocio.
         </p>
-        <p class="text-normal my-3">Técnologías usadas:</p>
+        <ul class="text-normal list-disc pl-5 mt-3 space-y-2">
+          <li data-i18n="exp.gs.li1">
+            Creé una librería de componentes interna que ahora usan varios
+            equipos, lo cual estandarizó la UI y redujo bastante el tiempo
+            que tardamos en integrar nuevas funcionalidades.
+          </li>
+          <li data-i18n="exp.gs.li2">
+            Optimicé los tiempos de carga de la plataforma trabajando en el
+            frontend y en cómo nos comunicamos con los servicios del backend.
+          </li>
+          <li data-i18n="exp.gs.li3">
+            Participo en las decisiones de arquitectura frontend del equipo,
+            proponiendo soluciones pensadas para escalar y ser fáciles de
+            mantener.
+          </li>
+        </ul>
+        <p data-i18n="exp.techs" class="text-normal my-3">Tecnologías usadas:</p>
         <ol class="text-normal flex gap-10 md:gap-16">
           <div>
             <li>React</li>
-            <li>HTML</li>
-            <li>CSS</li>
+            <li>TypeScript</li>
+            <li>Node.js</li>
           </div>
           <div>
+            <li>AWS</li>
+            <li>PrimeReact</li>
+            <li>GitLab</li>
+          </div>
+        </ol>
+      </ExperienceCard>
+
+      <ExperienceCard
+        id="necsus"
+        role="Frontend Developer"
+        company="Necsus"
+        date="Abril 2024 - Noviembre 2024"
+        dateKey="exp.necsus.date"
+        isActive={false}
+      >
+        <p data-i18n="exp.necsus.desc" class="text-normal">
+          Me dediqué a resolver issues y estabilizar una plataforma
+          empresarial que tenía varios problemas de rendimiento. Fue un
+          trabajo intenso de debugging y refactorización.
+        </p>
+        <ul class="text-normal list-disc pl-5 mt-3 space-y-2">
+          <li data-i18n="exp.necsus.li1">
+            Identifiqué y corregí bugs críticos que estaban afectando a los
+            usuarios, lo que ayudó a que la plataforma fuera mucho más
+            estable.
+          </li>
+          <li data-i18n="exp.necsus.li2">
+            Refactoricé componentes que se habían vuelto difíciles de mantener,
+            mejorando tanto el rendimiento como la legibilidad del código.
+          </li>
+          <li data-i18n="exp.necsus.li3">
+            Trabajé junto a backend y QA para definir estándares de código y
+            mejorar nuestros flujos de trabajo con Scrum.
+          </li>
+        </ul>
+        <p data-i18n="exp.techs" class="text-normal my-3">Tecnologías usadas:</p>
+        <ol class="text-normal flex gap-10 md:gap-16">
+          <div>
+            <li>React</li>
             <li>TypeScript</li>
-            <li>Gitlab</li>
             <li>SASS</li>
+          </div>
+          <div>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>GitLab</li>
           </div>
         </ol>
       </ExperienceCard>
 
       <ExperienceCard
         id="grupo500"
-        role="Desarrollador Frontend"
+        role="Frontend Developer"
         company="Rosoft"
         date="Enero 2024 - Abril 2024"
+        dateKey="exp.g500.date"
         isActive={false}
       >
-        <!-- Descripción como contenido HTML dentro del slot -->
-        <p class="text-normal">
-          Creé un sitio funcional, atractivo y fácil de navegar, optimizado para
-          SEO y con tiempos de carga significativamente reducidos gracias a la
-          optimización de imágenes y scripts.
+        <p data-i18n="exp.g500.desc" class="text-normal">
+          Desarrollé desde cero el sitio web de Grupo 500 Noches usando
+          Next.js. El objetivo principal era que se viera bien, cargara rápido
+          y posicionara en buscadores.
         </p>
-        <p class="text-normal my-3">Técnologías usadas:</p>
-        <ol class="text-normal flex gap-10">
+        <ul class="text-normal list-disc pl-5 mt-3 space-y-2">
+          <li data-i18n="exp.g500.li1">
+            Armé la estructura del proyecto con Next.js y SSR para que el
+            contenido se indexara correctamente en Google.
+          </li>
+          <li data-i18n="exp.g500.li2">
+            Trabajé en la optimización de imágenes, lazy loading y code
+            splitting para mejorar los tiempos de carga.
+          </li>
+          <li data-i18n="exp.g500.li3">
+            Hice todo el maquetado responsivo con Tailwind CSS, cuidando que
+            se viera bien tanto en móvil como en escritorio.
+          </li>
+        </ul>
+        <p data-i18n="exp.techs" class="text-normal my-3">Tecnologías usadas:</p>
+        <ol class="text-normal flex gap-10 md:gap-16">
           <div>
-            <li>Nexy Js</li>
-            <li>HTML</li>
-            <li>CSS</li>
+            <li>Next.js</li>
+            <li>TypeScript</li>
+            <li>Tailwind CSS</li>
           </div>
           <div>
-            <li>TypeScript</li>
-            <li>Gitlab</li>
-            <li>Tailwind CSS</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>GitLab</li>
           </div>
         </ol>
       </ExperienceCard>
 
       <ExperienceCard
         id="vidassistence"
-        role="Desarrollador Web"
+        role="Full Stack Developer"
         company="Rosoft"
         date="Septiembre 2023 - Diciembre 2023"
+        dateKey="exp.vida.date"
         isActive={false}
       >
-        <!-- Descripción como contenido HTML dentro del slot -->
-        <p class="text-normal">
-          Me encargué de liderar el desarrollo de una aplicación Android para la
-          generación y administración de reportes médicos, lo que mejoró
-          significativamente los tiempos de respuesta y seguimiento de pacientes
-          por parte del equipo médico. Esta aplicación permitió a los usuarios
-          finales generar reportes en tiempo real
+        <p data-i18n="exp.vida.desc" class="text-normal">
+          Estuve a cargo de desarrollar una app para que doctores pudieran
+          generar y consultar reportes médicos de sus pacientes, tanto desde
+          el celular como desde la web.
         </p>
-        <p class="text-normal my-3">Técnologías usadas:</p>
-        <ol class="text-normal flex gap-10">
+        <ul class="text-normal list-disc pl-5 mt-3 space-y-2">
+          <li data-i18n="exp.vida.li1">
+            Desarrollé la app móvil con React Native para que el personal
+            médico pudiera generar reportes en tiempo real desde su celular.
+          </li>
+          <li data-i18n="exp.vida.li2">
+            También hice el panel web con React para que desde oficina pudieran
+            administrar los reportes y dar seguimiento a pacientes.
+          </li>
+          <li data-i18n="exp.vida.li3">
+            Esto ayudó a que el equipo médico dejara de hacer reportes a mano,
+            lo cual agilizó mucho su trabajo diario.
+          </li>
+        </ul>
+        <p data-i18n="exp.techs" class="text-normal my-3">Tecnologías usadas:</p>
+        <ol class="text-normal flex gap-10 md:gap-16">
           <div>
             <li>React</li>
             <li>React Native</li>
-            <li>CSS</li>
+            <li>JavaScript</li>
           </div>
           <div>
-            <li>JavaScript</li>
-            <li>Github</li>
             <li>Bootstrap</li>
+            <li>CSS</li>
+            <li>GitHub</li>
           </div>
         </ol>
       </ExperienceCard>
 
       <ExperienceCard
         id="imass"
-        role="Becario como Desarrollador Frontend"
+        role="Frontend Developer Intern"
         company="IMASS"
         date="Marzo 2023 - Octubre 2023"
+        dateKey="exp.imass.date"
         isActive={false}
       >
-        <p class="text-normal">
-          En IMASS, fui parte del equipo encargado del desarrollo y diseño de
-          una plataforma web para la administración de pólizas colectivas. Este
-          sistema permitía a los usuarios gestionar pólizas de seguros de manera
-          eficiente y segura. Trabajé en el diseño y desarrollo de la página
-          "Seguros con Causa".
+        <p data-i18n="exp.imass.desc" class="text-normal">
+          Mi primera experiencia profesional. Entré como becario al equipo que
+          estaba construyendo una plataforma web para administrar pólizas de
+          seguros colectivas.
         </p>
-        <p class="text-normal my-3">Técnologías usadas:</p>
-        <ol class="text-normal flex gap-10">
+        <ul class="text-normal list-disc pl-5 mt-3 space-y-2">
+          <li data-i18n="exp.imass.li1">
+            Desarrollé componentes en React para el sistema de pólizas, donde
+            los usuarios podían gestionar sus seguros colectivos.
+          </li>
+          <li data-i18n="exp.imass.li2">
+            Diseñé y construí la landing page de "Seguros con Causa", que fue
+            mi primer proyecto propio dentro del equipo.
+          </li>
+          <li data-i18n="exp.imass.li3">
+            Aprendí mucho sobre buenas prácticas participando en code reviews
+            y haciendo pair programming con los desarrolladores senior.
+          </li>
+        </ul>
+        <p data-i18n="exp.techs" class="text-normal my-3">Tecnologías usadas:</p>
+        <ol class="text-normal flex gap-10 md:gap-16">
           <div>
             <li>React</li>
-            <li>HTML</li>
-            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Bootstrap</li>
           </div>
           <div>
-            <li>Bootstrap</li>
-            <li>Gitlab</li>
-            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>GitLab</li>
           </div>
         </ol>
       </ExperienceCard>
@@ -175,28 +273,24 @@ import ExperienceCard from "./experience/ExperienceCard.astro";
 
     tabButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        tabButtons.forEach((btn) =>
-          btn.classList.remove("text-secondary", "border-secondary"),
-        );
+        tabButtons.forEach((btn) => {
+          btn.classList.remove("text-secondary", "border-secondary");
+          btn.classList.add("text-dark", "border-transparent");
+        });
+
+        button.classList.remove("text-dark", "border-transparent");
         button.classList.add("text-secondary", "border-secondary");
+
         experienceContents.forEach((content) =>
           content.classList.add("hidden"),
         );
 
         const selectedTab = button.getAttribute("data-tab");
-
-        // Verifica que selectedTab no sea null
         if (selectedTab) {
           const element = document.getElementById(selectedTab);
-
-          // Verifica que el elemento existe antes de usar classList
           if (element) {
             element.classList.remove("hidden");
-          } else {
-            console.error(`Element with ID ${selectedTab} not found.`);
           }
-        } else {
-          console.error("selectedTab is null.");
         }
       });
     });

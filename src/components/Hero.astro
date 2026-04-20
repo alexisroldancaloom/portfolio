@@ -9,17 +9,21 @@ import Linkedin from "../icons/Linkedin.astro";
     <div class="mb-8 md:mb-0 md:mr-8 lg:mr-12 md:w-auto">
       <img
         src="/images/perfil.png"
-        alt="Alexis Roldán"
+        alt="Alexis Roldán — Frontend Specialist en Ciudad de México"
+        width="320"
+        height="320"
+        loading="eager"
+        fetchpriority="high"
         class="border-4 border-primary w-60 md:w-full max-w-xs md:max-w-sm object-cover mt-12 md:mt-0"
       />
     </div>
 
     <div class="flex flex-col items-center md:items-end w-full md:w-auto">
-      <p class="text-dark text-normal mb-2 md:mb-4">¡Hola! Soy Alexis Roldán</p>
-      <h2 class="text-large font-bold text-end">
-        Desarrollador <span class="text-secondary">Frontend</span>
-      </h2>
-      <p class="mt-4 text-normal max-w-md text-dark">
+      <p data-i18n="hero.greeting" class="text-dark text-normal mb-2 md:mb-4">¡Hola! Soy Alexis Roldán</p>
+      <h1 class="text-large font-bold text-end">
+        <span data-i18n="hero.roleLabel">Desarrollador</span> <span class="text-secondary" data-i18n="hero.rolePrefix">Frontend</span>
+      </h1>
+      <p data-i18n="hero.description" class="mt-4 text-normal max-w-md text-dark">
         Enfocado en seguir aprendiendo, escribir código limpio y hacer
         aplicaciones funcionales.
       </p>
@@ -30,11 +34,13 @@ import Linkedin from "../icons/Linkedin.astro";
           href="https://www.linkedin.com/in/alexis-rold%C3%A1n-s%C3%A1nchez-74b918241/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Perfil de LinkedIn de Alexis Roldán"
         >
-          <Linkedin class="w-10 h-10 hover:ba" />
+          <Linkedin class="w-10 h-10" />
         </a>
         <a href="/CV_RoldanAlexis.pdf" download="Alexis_Roldan_CV.pdf">
           <button
+            data-i18n="hero.downloadCv"
             class="px-6 py-2 border-2 border-secondary text-secondary rounded-full hover:bg-secondary hover:text-white transition-colors duration-300 text-normal"
           >
             Descargar CV
@@ -55,7 +61,7 @@ import Linkedin from "../icons/Linkedin.astro";
           ↓
         </div>
       </button>
-      <div class="text-normal mt-2">Conoce más</div>
+      <div data-i18n="hero.learnMore" class="text-normal mt-2">Conoce más</div>
     </a>
   </div>
 </section>
